@@ -2,6 +2,12 @@
 
 A simple and slim multi-lingual component for React with Redux without react-intl or react-i18n
 
+## Install
+
+````
+npm i react-redux-multilingual --save
+````
+
 ## Wiring it up
 
 ````
