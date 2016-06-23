@@ -1,6 +1,6 @@
 # React Multilingual with redux
 
-A simple and slim multi-lingual component for React with Redux without react-intl or react-i18n
+A simple and slim (Only 6KB) multi-lingual component for React with Redux without react-intl or react-i18n
 
 ## Install
 
