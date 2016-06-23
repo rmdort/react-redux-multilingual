@@ -18,9 +18,9 @@
   "author": "Vinay M <rmdort@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rmdort/react-multilingual/issues"
+    "url": "https://github.com/rmdort/react-redux-multilingual/issues"
   },
-  "homepage": "https://github.com/rmdort/react-multilingual#readme",
+  "homepage": "https://github.com/rmdort/react-redux-multilingual#readme",
   "dependencies": {
     "hoist-non-react-statics": "^1.2.0"
   },
