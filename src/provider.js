@@ -40,4 +40,4 @@ function mapPropsToState (state) {
   }
 }
 
-module.exports = connect(mapPropsToState)(IntlProvider)
+export default connect(mapPropsToState)(IntlProvider)

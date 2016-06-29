@@ -5,7 +5,7 @@ const getComponentDisplayName = (WrappedComponent) => {
   return WrappedComponent.displayName || WrappedComponent.name || 'Component'
 }
 
-module.exports = (WrappedComponent) => {
+export default (WrappedComponent) => {
   const WithTranslate = (props, context) => {
     return <WrappedComponent {...props} translate={context.translate} />
   }

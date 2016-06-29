@@ -2,7 +2,7 @@ var initialState = {
   locale: 'en'
 }
 
-function reducer (state = initialState, action) {
+export default function (state = initialState, action) {
   switch (action.type) {
     case 'SET_LOCALE':
       return {
@@ -13,6 +13,3 @@ function reducer (state = initialState, action) {
       return state
   }
 }
-
-
-module.exports = reducer
