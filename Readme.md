@@ -68,10 +68,10 @@ module.exports = withTranslate(App)
 ## Translate using Context
 
 ````
-const App = (props) => {
+const App = (props, context) => {
   return (
     <div>
-      {this.context.translate('hello', { name: 'John Doe' })}
+      {context.translate('hello', { name: 'John Doe' })}
     </div>
   )
 }
