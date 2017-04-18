@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import hoistNonReactStatics from 'hoist-non-react-statics'
 
 const getComponentDisplayName = (WrappedComponent) => {
@@ -11,7 +12,7 @@ export default (WrappedComponent) => {
   }
   WithTranslate.displayName = `withTranslate(${getComponentDisplayName(WrappedComponent)})`
   WithTranslate.contextTypes = {
-    translate: React.PropTypes.func
+    translate: PropTypes.func
   }
   return hoistNonReactStatics(WithTranslate, WrappedComponent)
 }

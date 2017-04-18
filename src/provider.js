@@ -1,4 +1,5 @@
 import React, { Children } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { supplant, translateKey, createHTMLMarkup } from './utils'
 
@@ -11,7 +12,7 @@ class IntlProvider extends React.Component {
     }
   }
   static childContextTypes = {
-    translate: React.PropTypes.func
+    translate: PropTypes.func
   };
   translate = (key, placeholders, isHTML) => {
     let result = translateKey(key, this.props.translations[this.props.locale]['messages'])
