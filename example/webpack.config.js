@@ -11,7 +11,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      // 'react-redux-multilingual': path.join(__dirname, './../lib')
+      'react-redux-multilingual': path.join(__dirname, './../lib')
     },
     fallback: path.resolve(__dirname, './node_modules')
   },

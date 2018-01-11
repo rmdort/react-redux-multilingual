@@ -82,3 +82,17 @@ App.contextTypes = {
 
 module.exports = App
 ````
+
+## Setting the initial locale
+
+Option 1: Pass your locale to initial state of your reducer
+````
+let store = createStore(reducers, { Intl: { locale: 'zh'}})
+````
+
+Option 2: Dispatch an action to change locale
+````
+import { IntlActions } from 'react-redux-multilingual'
+let store = createStore(reducers)
+store.dispatch(IntlActions.setLocale('zh'))
+````
