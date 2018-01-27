@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { supplant, translateKey, createHTMLMarkup } from './utils'
 
-class IntlProvider extends React.Component {
+export class IntlProvider extends React.Component {
   constructor (props) {
     super(props)
     if (!props.translations || !props.locale) {
