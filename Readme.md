@@ -96,3 +96,15 @@ import { IntlActions } from 'react-redux-multilingual'
 let store = createStore(reducers)
 store.dispatch(IntlActions.setLocale('zh'))
 ````
+
+## Immutable.JS support
+Just import 
+```
+import { ImmutableIntlReducer } from "react-redux-multilingual";
+```
+instead of default reducer, and
+```
+import { ImmutableIntlProvider } from "react-redux-multilingual";
+```
+instead of default provider. That's all!
+
