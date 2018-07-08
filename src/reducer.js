@@ -1,5 +1,5 @@
 var initialState = {
-  locale: 'en'
+  _locale: false
 }
 
 export default function (state = initialState, action) {
@@ -7,7 +7,7 @@ export default function (state = initialState, action) {
     case 'SET_LOCALE':
       return {
         ...state,
-        locale: action.locale
+        _locale: action.locale
       }
     default:
       return state

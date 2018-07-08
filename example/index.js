@@ -11,7 +11,7 @@ let store = createStore(reducers)
 
 ReactDOM.render(
   <Provider store={store}>
-    <IntlProvider translations={translations}>
+    <IntlProvider translations={translations} locale='en'>
       <App />
     </IntlProvider>
   </Provider>
