@@ -2,13 +2,12 @@ import React, { Children } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { supplant, translateKey, createHTMLMarkup } from './utils'
-import { setLocale } from './actions'
 import { TranslateProvider } from './context'
 
 class IntlProvider extends React.Component {
   constructor (props) {
     super(props)
-    const { translations, locale, setLocale } = props
+    const { translations, locale } = props
     if (!translations || !locale) {
       let namePart = this.constructor.displayName ? ' of ' + this.constructor.displayName : ''
       throw new Error('Could not find translations or locale on this.props ' + namePart)
@@ -49,4 +48,4 @@ function mapPropsToState (state) {
   }
 }
 
-export default connect(mapPropsToState, { setLocale })(IntlProvider)
+export default connect(mapPropsToState)(IntlProvider)
