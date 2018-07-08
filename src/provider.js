@@ -2,34 +2,42 @@ import React, { Children } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { supplant, translateKey, createHTMLMarkup } from './utils'
+import { setLocale } from './actions'
+import { TranslateProvider } from './context'
 
 class IntlProvider extends React.Component {
   constructor (props) {
     super(props)
-    if (!props.translations || !props.locale) {
+    const { translations, locale, setLocale } = props
+    if (!translations || !locale) {
       let namePart = this.constructor.displayName ? ' of ' + this.constructor.displayName : ''
       throw new Error('Could not find translations or locale on this.props ' + namePart)
     }
   }
-  static childContextTypes = {
-    translate: PropTypes.func
+  static defaultProps = {
+    translations: {}
   };
-  translate = (key, placeholders, isHTML) => {
-    let result = translateKey(key, this.props.translations[this.props.locale]['messages'])
+  translate = (key, placeholders, isHTML, options = {}) => {
+    const result = translateKey(key, this.props.translations[this.props.locale]['messages'])
+    const tagName = options.tagName || 'div'
     if (typeof placeholders === 'undefined') {
       return result
     }
+    const finalResult = supplant(result, placeholders)
     return isHTML
-    ? <div dangerouslySetInnerHTML={createHTMLMarkup(supplant(result, placeholders))} />
-    : supplant(result, placeholders)
+      ? React.createElement(
+        tagName,
+        { dangerouslySetInnerHTML: createHTMLMarkup(finalResult) },
+        null
+      )
+      : finalResult
   };
-  getChildContext () {
-    return {
-      translate: this.translate
-    }
-  }
   render () {
-    return Children.only(this.props.children)
+    return (
+      <TranslateProvider value={this.translate}>
+        {this.props.children}
+      </TranslateProvider>
+    )
   }
 }
 
@@ -41,4 +49,4 @@ function mapPropsToState (state) {
   }
 }
 
-export default connect(mapPropsToState)(IntlProvider)
+export default connect(mapPropsToState, { setLocale })(IntlProvider)

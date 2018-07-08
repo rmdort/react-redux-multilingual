@@ -1,18 +1,17 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import hoistNonReactStatics from 'hoist-non-react-statics'
+import { TranslateConsumer } from './context'
 
-const getComponentDisplayName = (WrappedComponent) => {
-  return WrappedComponent.displayName || WrappedComponent.name || 'Component'
+/**
+ * Access translate function
+ * @param  {Object} WrappedComponent
+ * @return {Object}
+ */
+function withTranslate (WrappedComponent) {
+  return (props) => (
+    <TranslateConsumer>
+      {(translate) => <WrappedComponent {...props} translate={translate} />}
+    </TranslateConsumer>
+  )
 }
 
-export default (WrappedComponent) => {
-  const WithTranslate = (props, context) => {
-    return <WrappedComponent {...props} translate={context.translate} />
-  }
-  WithTranslate.displayName = `withTranslate(${getComponentDisplayName(WrappedComponent)})`
-  WithTranslate.contextTypes = {
-    translate: PropTypes.func
-  }
-  return hoistNonReactStatics(WithTranslate, WrappedComponent)
-}
+export default withTranslate

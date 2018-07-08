@@ -1,6 +1,6 @@
 {
   "name": "react-redux-multilingual",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A simple multilingual translate component and HOC for react and redux",
   "main": "lib/index.js",
   "scripts": {
@@ -26,7 +26,7 @@
     "prop-types": "^15.5.8"
   },
   "peerDependencies": {
-    "react": "^0.14.0 || ^15.1.0",
+    "react": ">16.3.0",
     "react-redux": "^4.4.0",
     "redux": "^3.3.1"
   },

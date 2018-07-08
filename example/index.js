@@ -6,8 +6,9 @@ import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
 import App from './App'
 
-let reducers = combineReducers(Object.assign({}, { Intl }))
-let store = createStore(reducers)
+const defaultLocale = 'zh'
+const reducers = combineReducers(Object.assign({}, { Intl }))
+const store = createStore(reducers, { Intl: { locale: defaultLocale }})
 
 ReactDOM.render(
   <Provider store={store}>

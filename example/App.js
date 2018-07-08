@@ -5,7 +5,7 @@ import { withTranslate, IntlActions } from 'react-redux-multilingual'
 const App = ({ translate, dispatch }) => {
   return (
     <div>
-      <p>Hey theres</p>
+      <p>Hey there</p>
       {translate('hello')}
 
       <p>
