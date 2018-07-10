@@ -7,11 +7,11 @@ import { TranslateConsumer } from './context'
  * @return {Object}
  */
 function withTranslate (WrappedComponent) {
-  return (props) => (
-    <TranslateConsumer>
-      {(translate) => <WrappedComponent {...props} translate={translate} />}
+	return React.forwardRef((props, ref) => (
+		<TranslateConsumer>
+      {(translate) => <WrappedComponent {...props} translate={translate} ref={ref} />}
     </TranslateConsumer>
-  )
+	))
 }
 
 export default withTranslate
