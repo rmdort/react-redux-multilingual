@@ -3,9 +3,4 @@ import withTranslate from './withTranslate'
 import IntlProvider from './provider'
 import * as IntlActions from './actions'
 
-export {
-  IntlReducer,
-  withTranslate,
-  IntlProvider,
-  IntlActions
-}
+export { IntlReducer, withTranslate, IntlProvider, IntlActions }

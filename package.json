@@ -4,6 +4,7 @@
   "description": "A simple multilingual translate component and HOC for react and redux",
   "main": "lib/index.js",
   "scripts": {
+    "prettier": "prettier --single-quote --no-semi 'src/*.js' --write",
     "watch": "BABEL_ENV=production babel --watch src --out-dir lib"
   },
   "repository": {
@@ -23,6 +24,7 @@
   "homepage": "https://github.com/rmdort/react-redux-multilingual#readme",
   "dependencies": {
     "hoist-non-react-statics": "^1.2.0",
+    "prettier-standard": "^8.0.1",
     "prop-types": "^15.5.8"
   },
   "peerDependencies": {
