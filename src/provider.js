@@ -23,7 +23,11 @@ class IntlProvider extends React.Component {
     translations: {}
   }
   translate = (key, placeholders, isHTML, options = {}) => {
-    const result = translateKey(
+    /**
+     * Accept user defined translate
+     */
+    const translateFn = this.props.translate || translateKey
+    const result = translateFn(
       key,
       this.props.translations[this.props.locale]['messages']
     )
