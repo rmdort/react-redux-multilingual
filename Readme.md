@@ -4,13 +4,13 @@ A simple and slim (Only 6KB) multi-lingual component for React with Redux withou
 
 ## Install
 
-````
+```
 npm i react-redux-multilingual --save
-````
+```
 
 ## Wiring it up
 
-````
+```js
 import translations from './translations'
 import { IntlReducer as Intl, IntlProvider } from 'react-redux-multilingual'
 import { createStore, combineReducers } from 'redux'
@@ -27,12 +27,12 @@ ReactDOM.render(
     </IntlProvider>
   </Provider>
 , document.getElementById('root'))
-````
+```
 
 ## Translations format
 The translations props accepts object in this format
 
-````
+```js
 {
   en: {
     locale: 'en-US',
@@ -47,11 +47,11 @@ The translations props accepts object in this format
     }
   }
 }
-````
+```
 
 ## Translate using higher-order component (HOC)
 
-````
+```js
 import { withTranslate } from 'react-redux-multilingual'
 
 const App = ({ translate }) = {
@@ -63,11 +63,11 @@ const App = ({ translate }) = {
 }
 
 module.exports = withTranslate(App)
-````
+```
 
 ## Translate using Context
 
-````
+```js
 const App = (props, context) => {
   return (
     <div>
@@ -81,18 +81,18 @@ App.contextTypes = {
 }
 
 module.exports = App
-````
+```
 
 ## Setting the initial locale
 
 Option 1: Pass your locale to initial state of your reducer
-````
+```js
 let store = createStore(reducers, { Intl: { locale: 'zh'}})
-````
+```
 
 Option 2: Dispatch an action to change locale
-````
+```js
 import { IntlActions } from 'react-redux-multilingual'
 let store = createStore(reducers)
 store.dispatch(IntlActions.setLocale('zh'))
-````
+```
