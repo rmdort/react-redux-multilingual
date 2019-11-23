@@ -18,10 +18,10 @@ class IntlProvider extends React.Component {
   }
 
   static propTypes = {
-    translations: PropTypes.object,
+    translations: PropTypes.object
   }
   static defaultProps = {
-    translations: {},
+    translations: {}
   }
   translate = (key, placeholders, isHTML, options = {}) => {
     /**
