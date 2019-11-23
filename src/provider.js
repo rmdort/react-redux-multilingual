@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import {translateKey, translateUtil} from './utils'
+import {translateKey, translate} from './utils'
 import { TranslateProvider } from './context'
 
 class IntlProvider extends React.Component {
@@ -28,7 +28,7 @@ class IntlProvider extends React.Component {
      * Accept user defined translate
      */
     const translateFn = this.props.translate || translateKey
-    return translateUtil(translateFn,
+    return translate(translateFn,
         this.props.translations,
         this.props.locale,
         key,
