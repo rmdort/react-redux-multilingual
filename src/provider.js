@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { supplant, translateKey, createHTMLMarkup } from './utils'
+import {translateKey, translateUtil} from './utils'
 import { TranslateProvider } from './context'
 
 class IntlProvider extends React.Component {
@@ -16,33 +16,25 @@ class IntlProvider extends React.Component {
       )
     }
   }
+
   static propTypes = {
-    translations: PropTypes.object
+    translations: PropTypes.object,
   }
   static defaultProps = {
-    translations: {}
+    translations: {},
   }
   translate = (key, placeholders, isHTML, options = {}) => {
     /**
      * Accept user defined translate
      */
     const translateFn = this.props.translate || translateKey
-    const result = translateFn(
-      key,
-      this.props.translations[this.props.locale]['messages']
-    )
-    const tagName = options.tagName || 'div'
-    if (typeof placeholders === 'undefined') {
-      return result
-    }
-    const finalResult = supplant(result, placeholders)
-    return isHTML
-      ? React.createElement(
-          tagName,
-          { dangerouslySetInnerHTML: createHTMLMarkup(finalResult) },
-          null
-        )
-      : finalResult
+    return translateUtil(translateFn,
+        this.props.translations,
+        this.props.locale,
+        key,
+        placeholders,
+        isHTML,
+        options);
   }
   render() {
     return (
