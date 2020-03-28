@@ -5,7 +5,7 @@ const {
   Provider: TranslateProvider,
   Consumer: TranslateConsumer
 } = TranslateContext
-const useTranslate = useContext(TranslateContext)
+const useTranslate = () => useContext(TranslateContext)
 
 export { TranslateProvider, TranslateConsumer, useTranslate }
 export default TranslateContext

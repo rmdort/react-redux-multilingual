@@ -1,8 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { withTranslate, IntlActions } from 'react-redux-multilingual'
+import { withTranslate, IntlActions, useTranslate } from 'react-redux-multilingual'
 
-const App = ({ translate, dispatch }) => {
+const App = ({ dispatch }) => {
+
+  const translate = useTranslate()
   return (
     <div>
       <p>Hey there</p>
@@ -22,4 +24,4 @@ const App = ({ translate, dispatch }) => {
   )
 }
 
-module.exports = connect()(withTranslate(App))
+module.exports = connect()(App)
