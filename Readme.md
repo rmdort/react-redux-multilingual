@@ -49,6 +49,22 @@ The translations props accepts object in this format
 }
 ```
 
+## Translate using hook
+
+```js
+import { useTranslate } from 'react-redux-multilingual'
+
+function App () {
+  const t = useTranslate()
+
+  return (
+    <div>
+      {t('hello', { name: 'Foo Bar'})}
+    </div>
+  )
+}
+```
+
 ## Translate using higher-order component (HOC)
 
 ```js

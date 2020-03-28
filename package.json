@@ -1,10 +1,12 @@
 {
   "name": "react-redux-multilingual",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A simple multilingual translate component and HOC for react and redux",
   "main": "lib/index.js",
   "scripts": {
     "prettier": "prettier --single-quote --no-semi 'src/*.js' --write",
+    "release": "npm run build && npm publish",
+    "build": "BABEL_ENV=production babel src --out-dir lib",
     "watch": "BABEL_ENV=production babel --watch src --out-dir lib"
   },
   "repository": {

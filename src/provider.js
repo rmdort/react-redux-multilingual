@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import {translateKey, translate} from './utils'
+import { translateKey, translate } from './utils'
 import { TranslateProvider } from './context'
 
 class IntlProvider extends React.Component {
